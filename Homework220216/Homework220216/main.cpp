@@ -66,18 +66,15 @@ static void ToUpper(std::string& _Text)
 
 void TestReplace()
 {
-	std::string text = "ABbbbdddeeefdf";
-	Replace(text, "eeeeeeeeeeee", "ffffff");
-
-	text = "오늘은 정말 힘들었다";
-	Replace(text, "오늘은", "어제는");
+	std::string text = "aaaaabbb";
+	Replace(text, "aaa", "bbb");
 
 	int a = 0;
 }
 
 void TestInsert()
 {
-	std::string text = "fff";
+	std::string text = "fffff";
 	Insert(text, 3, "ddd");
 	Insert(text, 4, "ddd");
 
@@ -95,6 +92,6 @@ void TestRemove()
 
 int main()
 {
-	TestRemove();
+	TestReplace();
 	return 0;
 }
