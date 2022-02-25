@@ -585,7 +585,7 @@ int main()
 		GameServerDirectory SaveDir;
 		SaveDir.MoveParent();
 		SaveDir.MoveParent();
-		if (SaveDir.MoveChild("UnrealClient\\Source\\UnrealClient\\Message"))
+		if (false == SaveDir.MoveChild("UnrealClient\\Source\\UnrealClient\\Message"))
 		{
 			return 1;
 		}
