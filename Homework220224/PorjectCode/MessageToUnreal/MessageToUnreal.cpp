@@ -24,6 +24,13 @@ public:
 	std::vector<MemberInfo> Member;
 };
 
+struct CopyCode
+{
+	std::string SavePath;
+	std::string Code;
+};
+
+
 void SerializerTypeCheck(std::string& _Text, MemberInfo& _MemberInfo)
 {
 	if (_MemberInfo.Type == "std::string")
@@ -80,7 +87,7 @@ void DeSerializerTypeCheck(std::string& _Text, MemberInfo& _MemberInfo)
 
 
 
-void MessageHeaderCreate(std::vector<MessageInfo>& _Collection, const std::string Path)
+void MessageHeaderCreate(std::vector<MessageInfo>& _Collection, const std::string Path, std::vector<CopyCode>& _copyList)
 {
 	std::string MessageText;
 
@@ -157,8 +164,10 @@ void MessageHeaderCreate(std::vector<MessageInfo>& _Collection, const std::strin
 		MessageText += "\n";
 	}
 
-	GameServerFile SaveFile = GameServerFile{ Path, "wt" };
-	SaveFile.Write(MessageText.c_str(), MessageText.size());
+	//GameServerFile SaveFile = GameServerFile{ Path, "wt" };
+	//SaveFile.Write(MessageText.c_str(), MessageText.size());
+
+	_copyList.push_back({ Path, MessageText });
 }
 
 bool CheckMemberVarType(const std::string& _Text)
@@ -310,17 +319,21 @@ int main()
 	std::vector<MessageInfo> ClientMessage;
 	std::vector<MessageInfo> ServerMessage;
 	std::vector<MessageInfo> ServerClientMessage;
-
+	std::vector<CopyCode> CopyList;
 
 	// 만들고 나면 다 단순복사가 됩니다 ok?
 	{
 		GameServerDirectory LoadDir;
 		LoadDir.MoveParent("PorjectCode");
-		LoadDir.MoveChild("GameServerMessage\\Info");
+		if (false == LoadDir.MoveChild("GameServerMessage\\Info"))
+		{
+			std::cout << "파일 경로 오류" << std::endl;
+			return 1;
+		}
+
 		{
 			GameServerFile LoadFile = { LoadDir.PathToPlusFileName("MessageClientToServer.txt"), "rt" };
 			std::string Code = LoadFile.GetString();
-
 			if (false == MessageReflection(ClientMessage, Code))
 			{
 				return 1;
@@ -374,7 +387,10 @@ int main()
 			///ENUMFILE CREATE////////////////////////////////////////////////////////////////////////////
 			GameServerDirectory FileDir;
 			FileDir.MoveParent("PorjectCode");
-			FileDir.MoveChild("GameServerMessage");
+			if (false == FileDir.MoveChild("GameServerMessage"))
+			{
+				return 1;
+			}
 
 			std::string EnumFileText = "#pragma once\n\nenum class MessageId \n{\n";
 
@@ -389,8 +405,9 @@ int main()
 			EnumFileText += "};";
 
 			std::string SavePath = FileDir.PathToPlusFileName("MessageIdEnum.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(EnumFileText.c_str(), EnumFileText.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(EnumFileText.c_str(), EnumFileText.size());
+			CopyList.push_back({ SavePath, EnumFileText });
 			///////////////////////////////////////////////////////////////////////////////
 		}
 
@@ -398,7 +415,10 @@ int main()
 			///CONVERT FILE CREATE////////////////////////////////////////////////////////////////////////////
 			GameServerDirectory FileDir;
 			FileDir.MoveParent("PorjectCode");
-			FileDir.MoveChild("GameServerMessage");
+			if (false == FileDir.MoveChild("GameServerMessage"))
+			{
+				return 1;
+			}
 
 			std::string ConvertFileText = "#include \"PreCompile.h\"\n";
 			ConvertFileText += "#include \"MessageConverter.h\"\n";
@@ -422,8 +442,10 @@ int main()
 			ConvertFileText += "\tdefault:\n\t\treturn;\n\t}\n\tMessage_->DeSerialize(Sr);\n}";
 
 			std::string SavePath = FileDir.PathToPlusFileName("MessageConverter.cpp");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(ConvertFileText.c_str(), ConvertFileText.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(ConvertFileText.c_str(), ConvertFileText.size());
+
+			CopyList.push_back({ SavePath, ConvertFileText });
 			///////////////////////////////////////////////////////////////////////////////
 		}
 
@@ -431,18 +453,24 @@ int main()
 		{
 			GameServerDirectory FileDir;
 			FileDir.MoveParent("PorjectCode");
-			FileDir.MoveChild("GameServerMessage");
+			if (false == FileDir.MoveChild("GameServerMessage"))
+			{
+				return 1;
+			}
 
-			MessageHeaderCreate(ClientMessage, FileDir.PathToPlusFileName("ClientToServer.h"));
-			MessageHeaderCreate(ServerMessage, FileDir.PathToPlusFileName("ServerToClient.h"));
-			MessageHeaderCreate(ServerClientMessage, FileDir.PathToPlusFileName("ServerAndClient.h"));
+			MessageHeaderCreate(ClientMessage, FileDir.PathToPlusFileName("ClientToServer.h"), CopyList);
+			MessageHeaderCreate(ServerMessage, FileDir.PathToPlusFileName("ServerToClient.h"), CopyList);
+			MessageHeaderCreate(ServerClientMessage, FileDir.PathToPlusFileName("ServerAndClient.h"), CopyList);
 		}
 		///////////////////////////////////////////////////////////////////////////////
 		{
 			///DisFile CREATE////////////////////////////////////////////////////////////////////////////
 			GameServerDirectory FileDir;
 			FileDir.MoveParent("PorjectCode");
-			FileDir.MoveChild("GameServerApp");
+			if (false == FileDir.MoveChild("GameServerApp"))
+			{
+				return 1;
+			}
 
 			std::string DisText;
 
@@ -492,6 +520,8 @@ int main()
 			std::string SavePath = FileDir.PathToPlusFileName("ServerDispatcher.cpp");
 			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
 			SaveFile.Write(DisText.c_str(), DisText.size());
+
+			CopyList.push_back({ SavePath , DisText });
 		}
 
 	}
@@ -501,12 +531,18 @@ int main()
 	{
 		GameServerDirectory FileDir;
 		FileDir.MoveParent();
-		FileDir.MoveChild("GameServerBase");
+		if (false == FileDir.MoveChild("GameServerBase"))
+		{
+			return 1;
+		}
 
 		GameServerDirectory SaveDir;
 		SaveDir.MoveParent();
 		SaveDir.MoveParent();
-		SaveDir.MoveChild("UnrealClient\\Source\\UnrealClient\\Message");
+		if (false == SaveDir.MoveChild("UnrealClient\\Source\\UnrealClient\\Message"))
+		{
+			return 1;
+		}
 
 
 		{
@@ -517,8 +553,10 @@ int main()
 				, strlen("#include \"GameServerMathStruct.h\"\n"), "\n");
 
 			std::string SavePath = SaveDir.PathToPlusFileName("GameServerSerializer.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 		{
@@ -527,8 +565,11 @@ int main()
 
 			Code.erase(0, strlen("#include \"PreCompile.h\"") + 1);
 			std::string SavePath = SaveDir.PathToPlusFileName("GameServerSerializer.cpp");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 	}
 
@@ -536,13 +577,18 @@ int main()
 	{
 		GameServerDirectory FileDir;
 		FileDir.MoveParent();
-		FileDir.MoveChild("GameServerMessage");
+		if (false == FileDir.MoveChild("GameServerMessage"))
+		{
+			return 1;
+		}
 
 		GameServerDirectory SaveDir;
 		SaveDir.MoveParent();
 		SaveDir.MoveParent();
-		SaveDir.MoveChild("UnrealClient\\Source\\UnrealClient\\Message");
-
+		if (SaveDir.MoveChild("UnrealClient\\Source\\UnrealClient\\Message"))
+		{
+			return 1;
+		}
 
 		{
 			GameServerFile LoadFile = { FileDir.PathToPlusFileName("GameServerMessage.h"), "rt" };
@@ -555,8 +601,10 @@ int main()
 				, strlen("#include <GameServerBase/GameServerSerializer.h>\n"), "#include \"GameServerSerializer.h\"\n");
 
 			std::string SavePath = SaveDir.PathToPlusFileName("GameServerMessage.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 
@@ -564,8 +612,10 @@ int main()
 			GameServerFile LoadFile = { FileDir.PathToPlusFileName("ServerToClient.h"), "rt" };
 			std::string Code = LoadFile.GetString();
 			std::string SavePath = SaveDir.PathToPlusFileName("ServerToClient.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 
@@ -573,8 +623,10 @@ int main()
 			GameServerFile LoadFile = { FileDir.PathToPlusFileName("ClientToServer.h"), "rt" };
 			std::string Code = LoadFile.GetString();
 			std::string SavePath = SaveDir.PathToPlusFileName("ClientToServer.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 
@@ -582,8 +634,10 @@ int main()
 			GameServerFile LoadFile = { FileDir.PathToPlusFileName("ServerAndClient.h"), "rt" };
 			std::string Code = LoadFile.GetString();
 			std::string SavePath = SaveDir.PathToPlusFileName("ServerAndClient.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 
@@ -597,8 +651,10 @@ int main()
 
 
 			std::string SavePath = SaveDir.PathToPlusFileName("Messages.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 
@@ -608,8 +664,10 @@ int main()
 			std::string Code = LoadFile.GetString();
 
 			std::string SavePath = SaveDir.PathToPlusFileName("MessageIdEnum.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 		{
@@ -617,8 +675,10 @@ int main()
 			std::string Code = LoadFile.GetString();
 
 			std::string SavePath = SaveDir.PathToPlusFileName("ContentsEnums.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 
@@ -627,8 +687,10 @@ int main()
 			std::string Code = LoadFile.GetString();
 
 			std::string SavePath = SaveDir.PathToPlusFileName("MessageConverter.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 		{
@@ -638,8 +700,10 @@ int main()
 			Code.erase(0, strlen("#include \"PreCompile.h\"") + 1);
 
 			std::string SavePath = SaveDir.PathToPlusFileName("MessageConverter.cpp");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(Code.c_str(), Code.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(Code.c_str(), Code.size());
+
+			CopyList.push_back({ SavePath , Code });
 		}
 
 		{
@@ -688,48 +752,19 @@ int main()
 			DisText += "}																																													\n";
 
 			std::string SavePath = SaveDir.PathToPlusFileName("Handler\\HandlerHeader.h");
-			GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
-			SaveFile.Write(DisText.c_str(), DisText.size());
+			//GameServerFile SaveFile = GameServerFile{ SavePath, "wt" };
+			//SaveFile.Write(DisText.c_str(), DisText.size());
+
+			CopyList.push_back({ SavePath , DisText });
 		}
-
-
-
-
 	}
 
-	//if (어떠한 사소한 문제라도 있었다면)
-	//{
-	//	return 1;
-	//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// 
-	// 
+	for (int i = 0; i < CopyList.size(); ++i)
+	{
+		GameServerFile SaveFile = GameServerFile{ CopyList[i].SavePath, "wt"};
+		SaveFile.Write(CopyList[i].Code.c_str(), CopyList[i].Code.size());
+	}
+	
 	return 0;
 
 }
