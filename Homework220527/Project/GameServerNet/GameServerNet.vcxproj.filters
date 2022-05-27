@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="IPEndPoint.h">
+      <Filter>IP</Filter>
+    </ClInclude>
+    <ClInclude Include="IPAddress.h">
+      <Filter>IP</Filter>
+    </ClInclude>
+    <ClInclude Include="EndPoint.h">
+      <Filter>IP</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketAddress.h">
+      <Filter>IP</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPListener.h">
+      <Filter>NetObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDefine.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerHelper.h">
+      <Filter>NetHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="Overlapped.h">
+      <Filter>IO\Overlapped</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceptExOverlapped.h">
+      <Filter>IO\Overlapped</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPSession.h">
+      <Filter>NetObject</Filter>
+    </ClInclude>
+    <ClInclude Include="RecvOverlapped.h">
+      <Filter>IO\Overlapped</Filter>
+    </ClInclude>
+    <ClInclude Include="DisconnectOverlapped.h">
+      <Filter>IO\Overlapped</Filter>
+    </ClInclude>
+    <ClInclude Include="SendOverlapped.h">
+      <Filter>IO\Overlapped</Filter>
+    </ClInclude>
+    <ClInclude Include="DBConnecter.h">
+      <Filter>DBBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DBStatement.h">
+      <Filter>DBBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DBStatementResult.h">
+      <Filter>DBBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DBQuery.h">
+      <Filter>DBBase</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPSession.h">
+      <Filter>NetObject</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPRecvOverlapped.h">
+      <Filter>IO\Overlapped</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPSendOverlapped.h">
+      <Filter>IO\Overlapped</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="IPAddress.cpp">
+      <Filter>IP</Filter>
+    </ClCompile>
+    <ClCompile Include="IPEndPoint.cpp">
+      <Filter>IP</Filter>
+    </ClCompile>
+    <ClCompile Include="EndPoint.cpp">
+      <Filter>IP</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketAddress.cpp">
+      <Filter>IP</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPListener.cpp">
+      <Filter>NetObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerHelper.cpp">
+      <Filter>NetHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="Overlapped.cpp">
+      <Filter>IO\Overlapped</Filter>
+    </ClCompile>
+    <ClCompile Include="AcceptExOverlapped.cpp">
+      <Filter>IO\Overlapped</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPSession.cpp">
+      <Filter>NetObject</Filter>
+    </ClCompile>
+    <ClCompile Include="RecvOverlapped.cpp">
+      <Filter>IO\Overlapped</Filter>
+    </ClCompile>
+    <ClCompile Include="DisconnectOverlapped.cpp">
+      <Filter>IO\Overlapped</Filter>
+    </ClCompile>
+    <ClCompile Include="SendOverlapped.cpp">
+      <Filter>IO\Overlapped</Filter>
+    </ClCompile>
+    <ClCompile Include="DBConnecter.cpp">
+      <Filter>DBBase</Filter>
+    </ClCompile>
+    <ClCompile Include="DBStatement.cpp">
+      <Filter>DBBase</Filter>
+    </ClCompile>
+    <ClCompile Include="DBStatementResult.cpp">
+      <Filter>DBBase</Filter>
+    </ClCompile>
+    <ClCompile Include="DBQuery.cpp">
+      <Filter>DBBase</Filter>
+    </ClCompile>
+    <ClCompile Include="UDPSession.cpp">
+      <Filter>NetObject</Filter>
+    </ClCompile>
+    <ClCompile Include="UDPRecvOverlapped.cpp">
+      <Filter>IO\Overlapped</Filter>
+    </ClCompile>
+    <ClCompile Include="UDPSendOverlapped.cpp">
+      <Filter>IO\Overlapped</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="pch">
+      <UniqueIdentifier>{9187dec3-1682-4147-9601-58d82513fc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IP">
+      <UniqueIdentifier>{9ff9dd57-27d7-437d-a8cf-51b793c1efd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Global">
+      <UniqueIdentifier>{32a333e9-1f29-4642-9557-4f8b3673fb25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO">
+      <UniqueIdentifier>{1045721c-ef06-4559-817f-9b914105e6d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetObject">
+      <UniqueIdentifier>{d8b30b00-e960-495e-98b8-7489b4eaf24c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO\Overlapped">
+      <UniqueIdentifier>{40392f50-d27b-464d-9258-0582c21214c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetHelper">
+      <UniqueIdentifier>{0bbdf82c-c393-4b67-b11f-916ee51ec856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBBase">
+      <UniqueIdentifier>{75d659c8-0831-4b33-ae36-848ac46f73a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

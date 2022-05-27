@@ -1,0 +1,25 @@
+|Login-
+std::string ID;
+std::string PW;
+
+|Join-
+std::string ID;
+std::string PW;
+
+|CreateCharacter-
+std::string NickName;
+
+|SelectCharacter-
+std::string SelectCharNickName;
+
+|DeleteCharacter-
+std::string NickName;
+
+|UDPStart-
+int udpPort;
+
+|PlayerUpdate-
+FPlayerUpdateData PlayerData;
+
+|RequestMath-
+uint64_t PlayerID;

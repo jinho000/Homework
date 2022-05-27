@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealClient",
+			"Path": "C:\\Users\\jinho\\Desktop\\GameServerProgramming\\Homework\\Homework220527\\Unreal\\Source\\UnrealClient.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealClientEditor",
+			"Path": "C:\\Users\\jinho\\Desktop\\GameServerProgramming\\Homework\\Homework220527\\Unreal\\Source\\UnrealClientEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UnrealClient.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{27B06D00-6278-45E7-A342-06D7CCC38E7E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnrealClient.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnrealClientEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{75873B7F-2632-4FBA-BE08-56A5A20A8C35}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnrealClient">
+      <UniqueIdentifier>{EC1549D6-5FEB-4A24-9C67-FD02FE7F1C1E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnrealClient\UnrealClient.Build.cs">
+      <Filter>Source\UnrealClient</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnrealClient\UnrealClient.cpp">
+      <Filter>Source\UnrealClient</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\UnrealClient.h">
+      <Filter>Source\UnrealClient</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\CharacterSelect">
+      <UniqueIdentifier>{5BA7F5A8-BC3B-4A51-A4B4-65D530805391}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\CharacterSelect\CharacterListItem.cpp">
+      <Filter>Source\UnrealClient\CharacterSelect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\CharacterSelect\CharacterListItem.h">
+      <Filter>Source\UnrealClient\CharacterSelect</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\CharacterSelect\CharacterSelectItemObj.cpp">
+      <Filter>Source\UnrealClient\CharacterSelect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\CharacterSelect\CharacterSelectItemObj.h">
+      <Filter>Source\UnrealClient\CharacterSelect</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\CharacterSelect\CharacterSelectUI.cpp">
+      <Filter>Source\UnrealClient\CharacterSelect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\CharacterSelect\CharacterSelectUI.h">
+      <Filter>Source\UnrealClient\CharacterSelect</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Global">
+      <UniqueIdentifier>{5A842615-A68B-47CA-A4E1-C5A6AAFDC29E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\Global\CBlueprintFunctionLibrary.cpp">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Global\CBlueprintFunctionLibrary.h">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Global\CGameInstance.cpp">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Global\CGameInstance.h">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Global\UnrealThread.cpp">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Global\UnrealThread.h">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Global\UnrealUDPThread.cpp">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Global\UnrealUDPThread.h">
+      <Filter>Source\UnrealClient\Global</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Lobby">
+      <UniqueIdentifier>{E1BE2960-9C53-4361-9329-C6800F121251}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\Lobby\LobbyGameMode.cpp">
+      <Filter>Source\UnrealClient\Lobby</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Lobby\LobbyGameMode.h">
+      <Filter>Source\UnrealClient\Lobby</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Lobby\LobbyUI.cpp">
+      <Filter>Source\UnrealClient\Lobby</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Lobby\LobbyUI.h">
+      <Filter>Source\UnrealClient\Lobby</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Login">
+      <UniqueIdentifier>{60C3C611-676D-42B1-A651-86D0F5660854}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\Login\CLoginUI.cpp">
+      <Filter>Source\UnrealClient\Login</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Login\CLoginUI.h">
+      <Filter>Source\UnrealClient\Login</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Login\JoinUI.cpp">
+      <Filter>Source\UnrealClient\Login</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Login\JoinUI.h">
+      <Filter>Source\UnrealClient\Login</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Login\LoginGameMode.cpp">
+      <Filter>Source\UnrealClient\Login</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Login\LoginGameMode.h">
+      <Filter>Source\UnrealClient\Login</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Packets">
+      <UniqueIdentifier>{ADCEEC63-498F-4A3F-AE27-5FD002BB4EF9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketComponent.cpp">
+      <Filter>Source\UnrealClient\Packets</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketComponent.h">
+      <Filter>Source\UnrealClient\Packets</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketConvertor.cpp">
+      <Filter>Source\UnrealClient\Packets</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketConvertor.h">
+      <Filter>Source\UnrealClient\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\RegistPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Packets\ClientPackets">
+      <UniqueIdentifier>{8320A37D-1ED0-446A-BCF4-0EC1651A594C}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\ClientToServer.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\ContentEnum.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\ContentStruct.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\Packets.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\PacketType.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\ServerAndClient.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\ServerPacketBase.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\ClientPackets\ServerSerializer.cpp">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\ServerSerializer.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\ClientPackets\ServerToClient.h">
+      <Filter>Source\UnrealClient\Packets\ClientPackets</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Packets\PacketHandler">
+      <UniqueIdentifier>{AFAB4455-9AC2-4676-BC0F-264B4E6438E3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\AllPlayerInfoPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\AllPlayerInfoPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\CharacterListPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\CharacterListPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\ChatMessagePacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\ChatMessagePacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\CreateCharacterResultPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\CreateCharacterResultPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\DeleteCharacterResultPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\DeleteCharacterResultPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\GameMatchPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\GameMatchPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\InsertSectionResultPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\InsertSectionResultPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\JoginResultPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\JoginResultPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\LoginResultPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\LoginResultPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\PacketHandlerHeader.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\SelectCharacterResultPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\SelectCharacterResultPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\SpawnOtherPlayerPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\SpawnOtherPlayerPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Packets\PacketHandler\UDPStartResultPacketHandler.cpp">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\UDPStartResultPacketHandler.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Packets\PacketHandler\PacketHandlerBase">
+      <UniqueIdentifier>{9CFABF00-DBEB-4732-BAC8-EF4AA5D146FB}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\UnrealClient\Packets\PacketHandler\PacketHandlerBase\PacketHandlerBase.h">
+      <Filter>Source\UnrealClient\Packets\PacketHandler\PacketHandlerBase</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Play">
+      <UniqueIdentifier>{700295CE-9F3E-439B-99C5-B875A5EDA472}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\PlayGameMode.cpp">
+      <Filter>Source\UnrealClient\Play</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\PlayGameMode.h">
+      <Filter>Source\UnrealClient\Play</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Play\Character">
+      <UniqueIdentifier>{E625C396-990D-4424-96C0-FFF3AF0763CA}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Character\ClientAnimEnums.h">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\Character\ClientAnimInstance.cpp">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Character\ClientAnimInstance.h">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\Character\ClientCharacter.cpp">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Character\ClientCharacter.h">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\Character\ClientOtherCharacter.cpp">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Character\ClientOtherCharacter.h">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\Character\ClientPlayCharacter.cpp">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Character\ClientPlayCharacter.h">
+      <Filter>Source\UnrealClient\Play\Character</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealClient\Play\Chat">
+      <UniqueIdentifier>{BA556737-65F1-4411-8F6D-413624EE4C69}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\Chat\CChatMessage.cpp">
+      <Filter>Source\UnrealClient\Play\Chat</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Chat\CChatMessage.h">
+      <Filter>Source\UnrealClient\Play\Chat</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\Chat\CChatMsgWidget.cpp">
+      <Filter>Source\UnrealClient\Play\Chat</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Chat\CChatMsgWidget.h">
+      <Filter>Source\UnrealClient\Play\Chat</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealClient\Play\Chat\CChatWindow.cpp">
+      <Filter>Source\UnrealClient\Play\Chat</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealClient\Play\Chat\CChatWindow.h">
+      <Filter>Source\UnrealClient\Play\Chat</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

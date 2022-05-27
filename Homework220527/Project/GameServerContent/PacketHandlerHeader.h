@@ -1,0 +1,10 @@
+#pragma once									
+#include "LoginPacketHandler.h"
+#include "JoinPacketHandler.h"
+#include "CreateCharacterPacketHandler.h"
+#include "SelectCharacterPacketHandler.h"
+#include "DeleteCharacterPacketHandler.h"
+#include "UDPStartPacketHandler.h"
+#include "PlayerUpdatePacketHandler.h"
+#include "RequestMathPacketHandler.h"
+#include "ChatMessagePacketHandler.h"

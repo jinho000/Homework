@@ -1,0 +1,4 @@
+|ChatMessage-
+std::string NickName;
+std::string Message;
+

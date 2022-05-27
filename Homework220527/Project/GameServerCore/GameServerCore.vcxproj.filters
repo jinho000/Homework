@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerCore.h" />
+    <ClInclude Include="DBQueue.h">
+      <Filter>WorkQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="NetQueue.h">
+      <Filter>WorkQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSectionManager.h">
+      <Filter>SectionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSection.h">
+      <Filter>SectionManager\Section</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSectionThread.h">
+      <Filter>SectionManager\SectionThread</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerCore.cpp" />
+    <ClCompile Include="DBQueue.cpp">
+      <Filter>WorkQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="NetQueue.cpp">
+      <Filter>WorkQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSectionManager.cpp">
+      <Filter>SectionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSection.cpp">
+      <Filter>SectionManager\Section</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSectionThread.cpp">
+      <Filter>SectionManager\SectionThread</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="pch">
+      <UniqueIdentifier>{9187dec3-1682-4147-9601-58d82513fc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorkQueue">
+      <UniqueIdentifier>{483b2a37-f11a-48c8-9149-9d390267c23b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SectionManager">
+      <UniqueIdentifier>{4c0207ef-0915-4ee9-b1c0-d8d7576d08e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SectionManager\Section">
+      <UniqueIdentifier>{7a6a40f7-5331-48fd-8b74-315c9a7a6c60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SectionManager\SectionThread">
+      <UniqueIdentifier>{4e12a7c5-bc6f-4782-9f43-92b94af98c76}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
